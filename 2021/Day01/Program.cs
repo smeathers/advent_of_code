@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-// https://adventofcode.com/2021/day/1
-// Part1 = 1477
-// Part2 = 1523
+// https://adventofcode.com/2022/day/1
+// Part1 = 66306
+// Part2 = 
 
 namespace Day01
 {
