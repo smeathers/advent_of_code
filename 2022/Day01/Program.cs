@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 
-// https://adventofcode.com/2021/day/1
-// Part1 = 1477
-// Part2 = 1523
+// https://adventofcode.com/2022/day/1
+// Part1 = 66306
+// Part2 = 
 
 namespace Day01
 {
@@ -27,8 +27,6 @@ namespace Day01
 
             foreach (var line in lines)
             {
-
-                
                 if (int.TryParse(line, out int temp))
                 {
                     Console.WriteLine("Line: " + line);
@@ -36,7 +34,6 @@ namespace Day01
                 }
                 else if (count > bestCount)
                 {
-                    
                     Console.WriteLine("Number: " + number);
                     Console.WriteLine("Count: " + count);
                     Console.WriteLine("");
