@@ -13,51 +13,45 @@ namespace Day01
         static void Main()
         {
             var lines = File.ReadLines("input.txt");
-            Part1(lines);
-            Console.WriteLine("Hello World!");
+            int answer = Part1(lines);
+            Console.WriteLine(answer);
         }
 
-        static void Part1(IEnumerable<string> lines)
+        static int Part1(IEnumerable<string> lines)
         {
 
             int number = 1;
+            int count = 0;
             int bestCount = 0;
             int bestNumber = 0;
-            int count = 0;
 
             foreach (var line in lines)
             {
-                if (int.TryParse(line, out int temp))
+                if (int.TryParse(line, out int parsed))
                 {
-                    Console.WriteLine("Line: " + line);
-                    count += temp;
-                }
-                else if (count > bestCount)
-                {
-                    Console.WriteLine("Number: " + number);
-                    Console.WriteLine("Count: " + count);
-                    Console.WriteLine("");
-                    bestCount = count;
-                    count = 0;
-                    bestNumber = number;
-                    number++;
+                    //Console.WriteLine("Line: " + line);
+                    count += parsed;
                 }
                 else
                 {
-                    Console.WriteLine("Number: " + number);
-                    Console.WriteLine("Count: " + count);
-                    Console.WriteLine("");
-                    count = 0;
-                    number++;
+                    process(ref number, ref count, ref bestCount, ref bestNumber);
                 }
             }
 
+            process(ref number, ref count, ref bestCount, ref bestNumber);
+
+            Console.WriteLine("BestNumber: " + bestNumber);
+            Console.WriteLine("BestCount: " + bestCount);
+            return bestCount;
+        }
+
+        static void process(ref int number, ref int count, ref int bestCount, ref int bestNumber)
+        {
+            //Console.WriteLine("Number: " + number);
+            //Console.WriteLine("Count: " + count);
+            //Console.WriteLine("");
             if (count > bestCount)
             {
-
-                Console.WriteLine("Number: " + number);
-                Console.WriteLine("Count: " + count);
-                Console.WriteLine("");
                 bestCount = count;
                 count = 0;
                 bestNumber = number;
@@ -65,15 +59,9 @@ namespace Day01
             }
             else
             {
-                Console.WriteLine("Number: " + number);
-                Console.WriteLine("Count: " + count);
-                Console.WriteLine("");
                 count = 0;
                 number++;
             }
-
-            Console.WriteLine("BestNumber: " + bestNumber);
-            Console.WriteLine("BestCount: " + bestCount);
         }
 
     }
