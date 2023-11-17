@@ -1,7 +1,7 @@
 ﻿
 // https://adventofcode.com/2022/day/4
 // Part1 = 605
-// Part2 = 
+// Part2 = 914
 
 namespace Day04
 {
